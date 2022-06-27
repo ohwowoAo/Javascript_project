@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="wrap">
+        <div class="wrapInner">
+            <div class="hiddenBtn"><img src="img/hidden.svg" alt="닫기" width="35px"></div>
+            <div class="centerArea flexN">
+                <div class="platArea">
+                    <ul>
+                        <!-- <li><a href=""><img src="" alt=""></a></li>
+                        <li><a href=""><img src="" alt=""></a></li>
+                        <li><a href=""><img src="" alt=""></a></li> -->
+                        <li class="logOut"><i class="fas fa-power-off"></i></li>
+                        <li class="darkBtn"><i class="fas fa-moon"></i></li>
+                    </ul>
+                </div>
+                <img src="" alt="" class="toggleBtn">
+                <div class="centerMainArea">
+                    <div class="centerLeft">
+                        <div class="idBox">
+                            <div class="hiBox">
+                                <span></span>
+                                <span>만나서 반가워 :D</span>
+                            </div>
+                        </div>
+                        <div class="calculator">
+                            <form name="forms">
+                                <input type="text" readonly name="output" >
+                                <input type="button" class="numOrange" value="C" onclick="document.forms.output.value=''">
+                                <input type="button" class="numOrange" value="%" onclick="document.forms.output.value+='%'">
+                                <input type="button" class="numOrange" value="/" onclick="document.forms.output.value+='/'">
+                                <input type="button" class="numOrange" value="*" onclick="document.forms.output.value+='*'">
+                                <input type="button" value="7" onclick="document.forms.output.value+='7'">
+                                <input type="button" value="8" onclick="document.forms.output.value+='8'">
+                                <input type="button" value="9" onclick="document.forms.output.value+='9'">
+                                <input type="button" class="numPink" value="-" onclick="document.forms.output.value+='-'"> 
+                                <input type="button" value="4" onclick="document.forms.output.value+='4'">
+                                <input type="button" value="5" onclick="document.forms.output.value+='5'">
+                                <input type="button" value="6" onclick="document.forms.output.value+='6'">
+                                <input type="button" class="numPink" value="+" onclick="document.forms.output.value+='+'">
+                                <input type="button" value="1" onclick="document.forms.output.value+='1'">
+                                <input type="button" value="2" onclick="document.forms.output.value+='2'">
+                                <input type="button" value="3" onclick="document.forms.output.value+='3'">
+                                <input type="button" class="numResult" value="=" onclick="document.forms.output.value=eval(document.forms.output.value)">
+                                <input type="button" value="0" onclick="document.forms.output.value+='0'">
+                                <input type="button" value="00" onclick="document.forms.output.value+='00'">
+                                <input type="button" value="." onclick="document.forms.output.value+='.'">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="centerRight">
+                        <div class="dayBox">
+                            <span class="dateBox"></span>
+                            <div class="quote">
+                                <span class="famousSay"></span>
+                                <span class="author"></span>
+                            </div>
+                        </div>
+                        <div class="timeBox">
+                            <div class="weather">
+                                <span class="temp"></span>
+                                <span class="city"></span>
+                            </div>
+                            <div class="clock">
+                                <div class="ticktock">
+                                    <div class="center"></div>
+                                    <div class="hour"></div>
+                                    <div class="minute"></div>
+                                    <div class="second"></div>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="todoMusic">
+                            <div class="todoList">
+                                <div class="todoListMain">
+                                    <div class="todoTop">
+                                        <h3>ToDo List</h3>
+                                        <p>💖</p>
+                                    </div>
+                                    <form id="todoForm">
+                                        <input type="text" placeholder="오늘 할 일 적기 :D">
+                                    </form>
+                                    <ul id="todoChart"></ul>
+                                </div>
+                            </div>
+                            <div class="MusicArea">
+                                <div class="MusicMain">
+                                    <!-- <h3>Music Playing</h3> -->
+                                    <div class="imgArea">
+                                        <img src="img/loding.gif" alt="">
+                                    </div>
+                                    <div class="songInfo">
+                                        <p class="songName">Joker (Feat.JAMIE)</p>
+                                        <p class="artist">BIG Naughty (서동현)</p>
+                                    </div>
+                                    <div class="progressArea">
+                                        <div class="progressBar"></div>
+                                        <div class="timer">
+                                            <span class="current">0:00</span>
+                                            <span class="duration"></span>
+                                        </div>
+                                        <audio id="main_audio" src=""></audio>
+                                    </div>
+                                    <div class="controls">
+                                        <i id="repeat-plist" class="material-icons" title="Playlist looped">repeat</i>
+                                        <i id="prev" class="material-icons">skip_previous</i>
+                                        <div class="playPause">
+                                            <i class="material-icons">play_arrow</i>
+                                        </div>
+                                        <i id="next" class="material-icons">skip_next</i>
+                                        <i id="moreMusic" class="material-icons">queue_music</i>
+                                    </div>
+                                    <div class="music-list">
+                                        <div class="listTitle">
+                                            <div class="listRow">
+                                                <i class="material-icons">queue_music</i>
+                                                <span>Music list</span>
+                                            </div>
+                                            <i id="close" class="material-icons">close</i>
+                                        </div>
+                                        <div class="listMain">
+                                            <ul></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightArea flexN">
+                <canvas id="jsCanvas" class="canvas"></canvas>
+                <div class="paint_controls">
+                    <div id="jsColors" class="controls_colors">
+                        <!-- <div class="controls_color" style="background-color: #393939;"></div> -->
+                        <!-- <div class="controls_color" style="background-color: #fff;"></div> -->
+                        <div class="controls_color jsColor" style="background-color: #ffed02;"></div>
+                        <div class="controls_color jsColor" style="background-color: #80eb61;"></div>
+                        <div class="controls_color jsColor" style="background-color: #05b5ff;"></div>
+                        <div class="controls_color jsColor" style="background-color: #5603be;"></div>
+                        <div class="controls_color jsColor" style="background-color: #ffbcd0;"></div>
+                        <div class="controls_color jsColor check" style="background-color: #ff0398;"></div>
+                    </div>
+                    <div class="controls_range">
+                        <input type="range" id="jsRange" min="0.1" max="5.0" value="2.5" step="0.1">
+                    </div>
+                    <div class="controls_btns">
+                        <button id="jsClear">Clear</button>
+                        <button id="jsMode">Fill</button>
+                        <button id="jsSave">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="quotes.js"></script>
+    <script src="back.js"></script>
+    <script src="weather.js"></script>
+    <script src="clock.js"></script>
+    <script src="paint.js"></script>
+    <script src="todo.js"></script>
+    <script src="music.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
