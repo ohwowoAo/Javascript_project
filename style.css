@@ -1,0 +1,708 @@
+@import "reset.css";
+*{margin: 0; padding: 0;}
+ul,ol{list-style: none;}
+a{text-decoration: none;}
+img{border: 0;}
+
+/* body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MaplestoryOTFBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src: local('Material Icons'),
+      local('MaterialIcons-Regular'),
+      url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+      url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+      url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+
+
+/* 숨김아이콘 */
+.hiddenBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 105px;
+    left: 56px;
+    width: 60px;
+    height: 60px;
+    margin: 0 0 15px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 10%);
+    cursor: pointer;
+    transition: 0.2s;
+}
+.hiddenBtn:hover{
+    transform: scale(0.9);
+}
+.hiddenBtn.trans{
+    transform : rotate(45deg);
+}
+.opacity0 {
+    opacity: 0;
+}
+
+/* 아이콘 */
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+/* wrap */
+body{font-family: 'GangwonEdu_OTFBoldA';}
+#wrap{ display: flex; justify-content: center; align-items: center; position: relative;  height: 100vh}
+#wrap.dark:after{
+    content:'';
+    content: '';
+    background: rgba(0,0,0,0.8);
+    width: 100%;
+    height: 100%;}
+.wrapInner{ 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    position: absolute;
+    z-index: 1; 
+    width: 90%; 
+    height: 850px; 
+    padding:20px 0 0; 
+    border-radius:10px; }
+.backG01{background: url(img/01.jpg);}
+.backG02{background: url(img/02.jpg);}
+.backG03{background: url(img/03.jpg);}
+
+/* 센터 */
+.centerArea{ position: relative; width: 65%; height: 700px; margin: 0 60px 0 150px; border: 1px solid #fff; border-radius:10px; background: rgba(255, 255, 255, 0.3); backdrop-filter: blur(25px); box-shadow: 7px 25px 45px rgb(0 0 0 / 10%);}
+.flexN{flex: none;}
+
+/* 토글버튼 */
+.toggleBtn{position: absolute;}
+
+/* 왼쪽아이콘 */
+.centerArea .platArea{ 
+    position: absolute; 
+    top: 87px;
+    left: -140px;}
+.centerArea .platArea ul li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    margin: 0 0 15px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 10%);
+    cursor: pointer;
+    transition: 0.2s;
+}
+.centerArea .platArea ul li:hover{
+    transform: scale(0.9);
+}
+.centerArea .platArea ul li i{
+    font-size: 25px;
+}
+
+/* id & 계산기 */
+.centerArea .centerMainArea { padding: 50px; }
+.centerArea .centerMainArea:after{content:''; display:block; clear:both}
+.centerArea .centerMainArea .centerLeft{float: left; width: 33%; height: 595px;  }
+.centerArea .centerMainArea .centerLeft .idBox{
+    width:100%; 
+    height: 135px; 
+    padding: 22px; 
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 3%);}
+.centerArea .centerMainArea .centerLeft .idBox .hiBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 89px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 3%);
+    font-size: 1.5rem;
+    text-align: center;
+}
+.centerArea .centerMainArea .centerLeft .idBox .hiBox span{
+    line-height: 30px; 
+    font-family: 'Nanum Pen Script', cursive;
+    font-weight: bold;
+    font-size: 2rem;
+}
+.centerArea .centerMainArea .centerLeft .calculator{ position: relative; width: 100%; height: 440px; 
+    margin: 20px 0 0;          
+    padding: 22px; 
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 3%);}
+.centerArea .centerMainArea .centerLeft .calculator form{display: grid;
+    grid-template-columns: repeat(4, 48px);
+    grid-auto-rows: 48px;
+    grid-gap: 10px;
+    justify-content: center;
+    width: 100%;
+    height: 298px;
+    padding: 94px 0 0;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 3%);
+}
+.centerArea .centerMainArea .centerLeft .calculator form input[type='text']{
+    grid-column: span 4;
+    position: absolute;
+    width: 80%;
+    height: 72px;
+    padding: 0 10%;
+    border: none;
+    border-radius: 20px 20px 0 0;
+    background: rgba(255, 255, 255, 0.45);
+    font-size: 1.4rem;
+    text-align: right;
+    outline: none;
+}
+.centerArea .centerMainArea .centerLeft .calculator form input[type='button']{
+    padding: 7px 0 0;
+    border-radius: 50%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.4rem;
+    font-family: 'GangwonEdu_OTFBoldA';
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 3%);
+    transition: 0.1s;
+    cursor: pointer;
+}
+.centerArea .centerMainArea .centerLeft .calculator form input.numOrange{
+    background: rgba(255, 211, 182, 0.4);
+    border: 1px solid rgba(255, 211, 182, 0.8);
+    border-left: 1px solid rgba(255, 211, 182, 0.3);
+    border-top: 1px solid rgba(255, 211, 182, 0.3);
+}
+.centerArea .centerMainArea .centerLeft .calculator form input.numPink{
+    background: rgba(255, 170, 165, 0.4);
+    border: 1px solid rgba(255, 170, 165, 0.8);
+    border-left: 1px solid rgba(255, 170, 165, 0.3);
+    border-top: 1px solid rgba(255, 170, 165, 0.3);
+}
+.centerArea .centerMainArea .centerLeft .calculator form input[type='button']:hover{
+    padding: 6px 0 0;
+    transform: scale(0.9);
+}
+.centerArea .centerMainArea .centerLeft .calculator form input.numResult{
+    grid-row-start: 4;
+    grid-row-end: span 2;
+    grid-column-start: 4;
+    border-radius: 10px;
+    background: rgba(255, 86, 86, 0.4);
+    border: 1px solid rgba(255, 86, 86, 0.3);
+    border-left: 1px solid rgba(255, 86, 86, 0.3);
+    border-top: 1px solid rgba(255, 86, 86, 0.3);
+}
+
+
+/* 날짜 & 명언 */
+.centerArea .centerMainArea .centerRight{float: right; width: 65%; height: 595px; padding: 22px; box-sizing: border-box; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.8); background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(5px); box-shadow: 5px 5px 10px rgb(0 0 0 / 3%);}
+.centerArea .centerMainArea .centerRight .dayBox{width:100%; height: 90px; margin: 0 auto; border-radius:20px; border: 1px solid rgba(255, 255, 255, 0.8); background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(5px); box-shadow: 5px 5px 10px rgb(0 0 0 / 3%); text-align: center; overflow: hidden;}
+.centerArea .centerMainArea .centerRight .dateBox{display: block; height: 45px; line-height: 45px; font-size: 1.2rem; font-family: 'MaplestoryOTFBold';}
+.centerArea .centerMainArea .centerRight .dayBox .quote{ height: 45px; line-height: 45px; background: rgba(255,255,255,0.45);}
+.centerArea .centerMainArea .centerRight .dayBox .quote span{ font-size: .85rem; font-style: italic;}
+.centerArea .centerMainArea .centerRight .dayBox .quote .famousSay{ width:80%; }
+.centerArea .centerMainArea .centerRight .dayBox .quote .author{ width:20%; }
+.centerArea .centerMainArea .centerRight .dayBox .quote .author:before{ content:""; display: inline-block; width: 1px; height: 15px; margin: 0 10px -2px; background: #000;}
+
+
+/* 시계 & 온도 */
+.centerArea .centerMainArea .centerRight .timeBox{
+    display: grid;
+    grid-template-columns: 4fr 3fr;
+    margin: 20px 0 0; 
+    font-size: 0;}
+.centerArea .centerMainArea .centerRight .timeBox > div{ 
+    position: relative;
+    height: 130px; 
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 3%);
+    vertical-align: top;
+}
+.centerArea .centerMainArea .centerRight .timeBox .weather img{
+    position: absolute;
+    top: 10px;
+    right: 25px;}
+.centerArea .centerMainArea .centerRight .timeBox .weather span{display: block; margin: 0 20px; font-size: 1.3rem;}
+.centerArea .centerMainArea .centerRight .timeBox .weather .temp{margin:50px 20px 0; font-size: 2.5rem; line-height: 35px;}
+
+.centerArea .centerMainArea .centerRight .timeBox .clock { margin: 0 0 0 20px;}
+.centerArea .centerMainArea .centerRight .timeBox .clock .ticktock{
+    position: relative;
+    width: 110px;
+    height: 110px;
+    margin: 9px auto;
+    border-radius: 50%;
+    background-image: url(img/clock.png);
+    background-size: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: inset 0 0 35px rgb(255 255 255 / 80%), 5px 3px 15px rgb(0 0 0 / 5%);
+}
+.centerArea .centerMainArea .centerRight .timeBox .clock .ticktock .center{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5px;
+    height: 5px;
+    background-color: black;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    z-index: 1;
+}
+.hour{
+    position: absolute;
+    top: 31px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 3px;
+    height: 23px;
+    background-color: black;
+    border-radius: 10px 10px 0 0;
+    transform: rotate(0deg);
+    transform-origin: center 100%;
+}
+.minute{
+    position: absolute;
+    top: 23px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 2px;
+    height: 33px;
+    background-color: black;
+    transform: rotate(0deg);
+    transform-origin: center 100%;
+}
+.second{
+    position: absolute;
+    top: 16px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 1px;
+    height: 40px;
+    background-color: red;
+    transform: rotate(0deg);
+    transform-origin: center 100%;
+}
+
+
+/********* 투두 & 뮤직 ***********/
+.centerArea .centerMainArea .centerRight .todoMusic{
+    display: grid;
+    grid-template-columns: 3fr 3fr; 
+    margin: 20px 0 0; 
+}
+.centerArea .centerMainArea .centerRight .todoMusic > div{    
+    height: 285px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 3%);}
+
+/* 투두리스트 */
+.centerArea .centerMainArea .centerRight .todoMusic .todoList .todoListMain{ position: relative; height: 100%; margin: 0 14px;}
+.centerArea .centerMainArea .centerRight .todoMusic .todoList .todoTop{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 8px 7px;
+    border-bottom: 1px solid #000;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .todoList h3{
+    font-size: 1.2rem;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .todoList #todoForm{    
+    position: absolute;
+    left: 50%;
+    bottom: 11px;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 6px 0 2px;
+    background: #fff;
+    border-radius: 20px;}
+.centerArea .centerMainArea .centerRight .todoMusic .todoList input{
+    padding: 0 20px;
+    border: 0;
+    background: none;
+    font-size: 1rem;
+    font-family: 'GangwonEdu_OTFBoldA';
+    outline: none;}
+.centerArea .centerMainArea .centerRight .todoMusic #todoChart{
+    height: 170px;
+    overflow: auto;
+    -ms-overflow-style: none;
+    counter-reset : numbering;
+    list-style-type:none;
+}
+.centerArea .centerMainArea .centerRight .todoMusic #todoChart::-webkit-scrollbar{
+    display:none;
+}
+.centerArea .centerMainArea .centerRight .todoMusic #todoChart li{ 
+    position: relative; 
+    margin: 14px 0; }
+.centerArea .centerMainArea .centerRight .todoMusic #todoChart li:before{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: rgb(254,193,193,0.5);
+    font-size: .9rem;
+    text-align: center;
+    counter-increment : numbering; 
+    content : counter(numbering); 
+}
+.centerArea .centerMainArea .centerRight .todoMusic #todoChart li span{margin: 0 0 0 6px; font-size: 1.2rem;}
+.centerArea .centerMainArea .centerRight .todoMusic #todoChart button {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    margin: -9px 0 0;
+    font-size: 11px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+/* 뮤직 */
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea{
+    margin: 0 0 0 20px;
+    text-align: center;}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain{ position: relative; padding: 15px; overflow: hidden;}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain h3{
+    margin: 0 0 10px;
+    font-size: 1rem;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .imgArea{
+    position: relative;
+    height:193px; 
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .imgArea img{
+    width: 100%;
+    height: 100%;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .songInfo{
+    position: absolute;
+    top: 39%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    opacity: 0;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain:hover .songInfo{
+    opacity: 0.8;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .songInfo .songName{ 
+    margin: 12px 0 5px; 
+    font-size: 1rem;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .songInfo .artist{ color:#515c6f; font-size: .8rem; }
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .progressArea{margin: 12px 0;}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .progressArea{
+    width: 100%;
+    height: 4px;
+    background-color: #f0f0f0;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .progressArea .progressBar{
+    position: relative;
+    width: 0;
+    height: inherit;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #ff74a4, #9f6ea3);
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .progressArea .progressBar::before{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: inherit;
+    top: 50%;
+    right: -5px;
+    transform: translateY(-50%);
+    background: inherit;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .progressArea:hover .progressBar::before{
+    opacity: 1;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .progressArea .timer{    
+    display: flex;
+    margin: 5px 0 0;
+    align-items: center;
+    justify-content: space-between;}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .progressArea .timer span{
+    color:#515c6f;
+    font-size: .7rem; 
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .controls{    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .controls i{
+    font-size: 20px;
+    user-select: none;
+    background: linear-gradient(90deg, #ff74a4, #9f6ea3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .controls i:nth-child(2),
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .controls i:nth-child(4){
+    font-size: 30px;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .controls #next{
+    margin: 0 0 0 -13px;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .controls .playPause{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #fff, #cecaca);
+    box-shadow: 0 0 2px 2px #ff74a4;
+    z-index: 1;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .controls .playPause::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: inherit;
+    background: linear-gradient(#ff74a4, #9f6ea3);
+    z-index: -1;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .controls .playPause i{
+    -webkit-text-fill-color: #fff;
+    opacity: 0.8;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .music-list{
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    left: 0;
+    bottom: -400px;
+    z-index: 10;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 15px;
+    box-shadow: 0 -3px 10px rgb(0 0 0 / 10%);
+    transition: all 0.15s ease-out;
+    opacity: 0;
+    pointer-events: none;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .music-list.show {
+    height: 185px;
+    bottom: 8px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .music-list .listTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #515c6f;
+    margin-bottom: 18px;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .music-list .listTitle .listRow i {
+    vertical-align: -5px;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .music-list .listTitle #close{
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .music-list .listMain {
+    color: #515c6f;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .music-list .listMain > ul {
+    max-height: 126px;
+    margin: 10px 0;
+    overflow: auto;
+    -ms-overflow-style: none;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .music-list .listMain > ul::-webkit-scrollbar{
+    display:none;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .music-list .listMain > ul > li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .music-list .listMain > ul > li.playing {
+    color: #ffcbde;
+    pointer-events: none;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .music-list .listMain > ul > li .listRow{
+    line-height: 16px;
+    text-align: left;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .music-list .listMain > ul > li .listRow span{
+    font-size: .925rem;
+}
+.centerArea .centerMainArea .centerRight .todoMusic .MusicArea .MusicMain .music-list .listMain > ul > li .listRow p {
+    font-size: .825rem;
+    opacity: 0.8;
+}
+
+/* 그림판 */
+.rightArea{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 300px; 
+    height: 700px; 
+    border: 1px solid #fff; 
+    border-radius:10px; 
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    box-shadow: rgb(0 0 0 / 3%) 5px 5px 10px;}
+.canvas{
+    width: 280px;
+    height: 500px;
+    margin: 15px 0 0;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 3%);
+}
+.paint_controls{display:flex; flex-direction: column;
+    align-items: center; margin: 30px 0 0;
+}
+.paint_controls .controls_colors .controls_color{
+    width: 40px;
+    height: 40px;
+    margin: 0 3px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+}
+.paint_controls .controls_colors .controls_color.check:after{
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url(img/checkIcon.png) no-repeat;
+    background-size: 65%;
+    background-position: center;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 50%;
+}
+.paint_controls .controls_range{
+    margin: 20px 0 0;
+}
+.paint_controls .controls_btns{
+    margin: 30px 0 0;
+}
+.paint_controls .controls_btns button{
+    all: unset;
+    width: 80px;
+    padding: 6px 0px 0;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08); 
+    font-size: 1.2rem;  
+}
+.paint_controls .controls_btns button:active{
+    transform: scale(0.98);
+}
+.paint_controls .controls_colors{
+    display: flex;
+}
+
+
