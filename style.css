@@ -35,7 +35,9 @@ img{border: 0;}
 }
 
 
-
+body{
+    min-width: 1910px;
+}
 /* 숨김아이콘 */
 .hiddenBtn {
     display: flex;
@@ -109,7 +111,7 @@ body{font-family: 'GangwonEdu_OTFBoldA';}
     align-items: center; 
     position: absolute;
     z-index: 1; 
-    width: 90%; 
+    width: 1728px; 
     height: 850px; 
     padding:20px 0 0; 
     border-radius:10px; }
@@ -118,7 +120,7 @@ body{font-family: 'GangwonEdu_OTFBoldA';}
 .backG03{background: url(img/03.jpg);}
 
 /* 센터 */
-.centerArea{ position: relative; width: 65%; height: 700px; margin: 0 60px 0 150px; border: 1px solid #fff; border-radius:10px; background: rgba(255, 255, 255, 0.3); backdrop-filter: blur(25px); box-shadow: 7px 25px 45px rgb(0 0 0 / 10%);}
+.centerArea{ position: relative; width: 1125px; height: 700px; margin: 0 60px 0 150px; border: 1px solid #fff; border-radius:10px; background: rgba(255, 255, 255, 0.3); backdrop-filter: blur(25px); box-shadow: 7px 25px 45px rgb(0 0 0 / 10%);}
 .flexN{flex: none;}
 
 /* 토글버튼 */
