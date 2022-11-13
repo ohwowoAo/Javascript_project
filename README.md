@@ -1,7 +1,5 @@
 ## Javascript_project01
 
----
-
 <br />
 
 ### 프로젝트 소개
